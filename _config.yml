@@ -2,7 +2,7 @@
 title:          Rosie's Devlog 
 description:    "기억하고 싶은 것들을 기록합니다"
 baseurl:        ""
-url:            "https://sori-kim.github.io"
+url:            "http://developerosie.com"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
@@ -10,7 +10,7 @@ google_analytics: UA—XXXXXXXX-X
 # Author
 author:
   name:         Sori Kim
-  url:          https://sori-kim.github.io
+  url:          http://developerosie.com
   email:        soriosie@gmail.com
 
 # Build settings
