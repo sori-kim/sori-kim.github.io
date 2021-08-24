@@ -171,9 +171,10 @@ module.exports = slashCommand;
 
 <img width="583" alt="스크린샷 2020-12-21 오후 7 12 44" src="https://user-images.githubusercontent.com/60246689/113474097-a8a90d80-94a8-11eb-8986-39b5bec350c3.png">
 
+<br />
 
-
-다음 포스팅에서는 Interactive Components를 이용하여 새로운 휴가를 등록하는 기능을 만들겠다.
+다음 포스팅에서는 Interactive Components를 이용하여 새로운 휴가를 등록하는 기능을 만들었던 과정을 적어보겠다.  
+(언제가 될지는 말 못...)
 
 
  

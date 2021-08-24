@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[회고] wecode 1차 프로젝트 Subway 웹사이트 개발 회고'
+title: 'Wecode 1차 프로젝트 Subway 웹사이트 개발 회고'
 tags: 'Review'
 ---
 

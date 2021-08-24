@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[회고] Wecode 2차 프로젝트 Patagonia 웹사이트 개발 회고'
+title: 'Wecode 2차 프로젝트 Patagonia 웹사이트 개발 회고'
 tags: 'Review'
 ---
 
