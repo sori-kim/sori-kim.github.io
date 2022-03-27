@@ -36,8 +36,10 @@ rollup은 webpack처럼 여러 모듈이나 파일을 작게 만들어주는 번
 4. webpack에서 tree shaking이 잘 되지 않는 경우 (import한 모듈을 사용한 함수를 사용하지 않는 경우)를 해결할 수 있다. (여러 모듈을 한 파일로 합치기 때문에 )
 5. webpack과 다르게 코드들을 동일한 수준으로 호이스팅 한 후 한 번에 번들링을 진행하기 때문에 속도에서는 webpack보다 빠르다.
 
+```
 __ES 모듈의 라이브러리를 만들고 있는 경우 =>  `Rollup`  
 code spliting이 필요하거나 static asset이 많은 경우, 안정성을 추구해야되는 경우 혹은 CommonJS 종속성이 많은 경우 => `webpack`__
+```
 
 
 ## Storybook
@@ -137,6 +139,7 @@ tsconfig.json 파일을 생성하여 config를 설정해준다. 나는 다음과
 
 types 폴더 안에 `typings.d.ts` 파일을 생성해주고 타입 정의가 필요한 확장자 등을 정의해준다. 나는 svg파일과 jpg, png 파일을 위한 타입 정의를 추가 했다.
 ```typescript
+//types/typings.d.ts
 declare module "*.svg" {
   import * as React from "react";
 
@@ -156,7 +159,7 @@ declare module "*.png";
 ### 3. 컴포넌트 파일 작성하기
 리액트와 타입스크립트 세팅이 완료되었기 때문에 가장 기본적인 버튼 컴포넌트를 하나 만들어주겠다. 
 
-```typescript jsx
+```typescript
 //components/Button/index.tsx
 import React from "react";
 import styled, { css } from "styled-components";
@@ -259,6 +262,7 @@ yarn add -D rollup rollup-plugin-typescript2 rollup-plugin-postcss @rollup/plugi
 
 rollup.config.js 파일을 생성하고 설정 내용을 추가해준다.
 ```js
+//rollup.config.js
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
@@ -363,7 +367,7 @@ yarn add -D @storybook/react @babel/core babel-preset-react-app babel-loader tsc
 프로젝트 루트에 .storybook이라는 디렉토리를 생성해주고 main.js라는 파일을 만든다.
 
 ```javascript
-//main.js
+//.storybook/main.js
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
@@ -419,7 +423,7 @@ unshift를 이용하여 설정을 추가해주는 이유는 `babel-loader`로 .t
 
 이제 아까 만들었던 Button 컴포넌트에 대한 story를 작성해본다.
 
-```typescript jsx
+```typescript
 //components/Button/Button.stories.tsx
 import React from "react";
 import Button, {ButtonProps} from "../_drafts";
@@ -460,6 +464,7 @@ Default.args = {
 ```
 
 이렇게 하고 스토리북을 실행해보면 화면이 잘 나오는걸 알 수 있다.
+
 ![화면 기록 2022-03-27 오후 5 15 06](https://user-images.githubusercontent.com/60246689/160273208-a5ffe82c-8fda-49ad-9683-57d157b8a313.gif)
 
 

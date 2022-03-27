@@ -17,6 +17,9 @@ author:
 markdown:       kramdown
 include:
   - _pages
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Assets
 sass:
