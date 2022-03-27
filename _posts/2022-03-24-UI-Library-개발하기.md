@@ -36,10 +36,11 @@ rollup은 webpack처럼 여러 모듈이나 파일을 작게 만들어주는 번
 4. webpack에서 tree shaking이 잘 되지 않는 경우 (import한 모듈을 사용한 함수를 사용하지 않는 경우)를 해결할 수 있다. (여러 모듈을 한 파일로 합치기 때문에 )
 5. webpack과 다르게 코드들을 동일한 수준으로 호이스팅 한 후 한 번에 번들링을 진행하기 때문에 속도에서는 webpack보다 빠르다.
 
-```
+그렇다고 항상 rollup이 webpack보다 좋다고 할 수 있는 건 아니고 정리하면 다음과 같다.  
+
 __ES 모듈의 라이브러리를 만들고 있는 경우 =>  `Rollup`  
 code spliting이 필요하거나 static asset이 많은 경우, 안정성을 추구해야되는 경우 혹은 CommonJS 종속성이 많은 경우 => `webpack`__
-```
+
 
 
 ## Storybook
@@ -245,7 +246,6 @@ const Block = styled.button<{
 `;
 
 export default Button;
-
 ```
 
 ```typescript
@@ -422,11 +422,21 @@ unshift를 이용하여 설정을 추가해주는 이유는 `babel-loader`로 .t
 ```
 
 이제 아까 만들었던 Button 컴포넌트에 대한 story를 작성해본다.
+참고로 나는 storybook에서 제공하는 controls addon을 이용하여 기능을 추가했는데, 이를 위해서는 `@storybook/addon-essentials` 플러그인을 다운받고 앞에서 작성한 main.js에 addon 추가를 한다.
+
+```javascript
+//.storybook/main.js
+module.exports = {
+    addons: [
+        "@storybook/addon-essentials",
+    ]
+}
+```
 
 ```typescript
 //components/Button/Button.stories.tsx
 import React from "react";
-import Button, {ButtonProps} from "../_drafts";
+import Button, {ButtonProps} from "./";
 import {Meta, Story} from "@storybook/react";
 import styled from "styled-components";
 
@@ -469,6 +479,6 @@ Default.args = {
 
 
 이렇게 해서 UI 컴포넌트 라이브러리를 개발하기 위한 환경 설정 하는 방법을 정리해봤다.  
-다음 포스팅에는 빌드 결과물을 github packages를 이용하여 배포하기 위해 필요한 설정들을 정리하려고 한다. 
+다음 포스팅에는 빌드 결과물을 github packages를 이용하여 배포하기 위해 필요한 설정들을 정리하려고 한다.   
 끝! 
 
