@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rocateer.mediscount.dev",
+      "sha256_cert_fingerprints": [
+        "63:61:BB:5F:28:68:4A:0F:96:3A:73:06:66:50:A4:8E:19:BB:1A:91:13:29:93:E3:53:07:C6:34:1E:BC:10:E6"
+      ]
+    }
+  }
+]
